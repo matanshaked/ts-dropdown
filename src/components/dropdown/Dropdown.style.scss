@@ -1,0 +1,29 @@
+@import "../../assets/varibale";
+
+.icon-wrapper-conteiner {
+  display: flex;
+  &.icon-wrapper-conteiner.right {
+    flex-direction: row-reverse;
+  }
+}
+
+.dropdown-container {
+  position: relative;
+  width: 120px;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  color: $white100;
+}
+
+.icon-container {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: $black900;
+}

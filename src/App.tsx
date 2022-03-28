@@ -1,24 +1,38 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Dropdown from "./components/dropdown/Dropdown.component";
 
 function App() {
+  const itemList = [
+    {
+      text: "One",
+      clickHandler: function () {
+        alert(this.text);
+      },
+    },
+    {
+      text: "two",
+      clickHandler: function () {
+        alert(this.text);
+      },
+    },
+    {
+      text: "three",
+      clickHandler: function () {
+        alert(this.text);
+      },
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Dropdown itemList={itemList} direction={"right"}></Dropdown> align to
+      right
+      <br />
+      <br />
+      <Dropdown itemList={itemList} direction={"left"}></Dropdown> align to left
+      <br />
+      <br />
+      <Dropdown itemList={itemList} direction={"top"}></Dropdown> align to top
     </div>
   );
 }

@@ -1,0 +1,11 @@
+@import "../../assets/varibale";
+
+.dropDownPanel {
+  background-color: $black900;
+  position: absolute;
+  width: 120px;
+  z-index: 1;
+  &.dropDownPanel.top {
+    bottom: 45px;
+  }
+}
