@@ -1,26 +1,29 @@
 import React from "react";
+import { Item } from "./dataStructure";
 import "./App.css";
 import Dropdown from "./components/dropdown/Dropdown.component";
 
 function App() {
-  const itemList = [
+  let itemList: Item[];
+  itemList = [
     {
+      type: "button",
       text: "One",
       clickHandler: function () {
-        alert(this.text);
+        console.log("One");
       },
     },
     {
+      type: "button",
       text: "two",
       clickHandler: function () {
-        alert(this.text);
+        console.log("two");
       },
     },
     {
+      type: "anchor",
       text: "three",
-      clickHandler: function () {
-        alert(this.text);
-      },
+      href: "https://www.w3schools.com/css/css_dropdowns.asp",
     },
   ];
   return (

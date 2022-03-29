@@ -1,6 +1,15 @@
 import { MouseEventHandler } from "react";
 
-export interface Item {
+export type ButtonItem = {
+  type: "button";
   text: string;
-  clickHandler: MouseEventHandler;
-}
+  clickHandler: MouseEventHandler<HTMLElement>;
+};
+
+export type AnchorItem = {
+  type: "anchor";
+  text: string;
+  href: string;
+};
+
+export type Item = AnchorItem | ButtonItem;
