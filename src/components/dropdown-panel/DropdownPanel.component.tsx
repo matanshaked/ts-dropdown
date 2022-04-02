@@ -1,11 +1,11 @@
-import { Item } from "../../dataStructure";
+import { DropdownItemType } from "../../dataStructure";
 import DropdownItem from "../dropdown-item/DropdownItem.component";
 
 import "./DropdownPanel.style.scss";
 
 interface PanelProps {
   isDropDownOpen: boolean;
-  itemList: Item[];
+  itemList: DropdownItemType[];
   direction: string;
 }
 
@@ -16,8 +16,8 @@ const DropdownPanel = (panelProps: PanelProps) => {
   return (
     <div className={dropDownPanelClass}>
       {panelProps.isDropDownOpen &&
-        panelProps.itemList.map((item, index) => (
-          <DropdownItem item={item} key={index} />
+        panelProps.itemList.map((item) => (
+          <DropdownItem item={item} key={item.id} />
         ))}
     </div>
   );

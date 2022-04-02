@@ -4,11 +4,12 @@ import { MoreIcon } from "../more-icon/MoreIcon.component";
 import DropdownPanel from "../dropdown-panel/DropdownPanel.component";
 
 import "./Dropdown.style.scss";
-import { Item } from "../../dataStructure";
+import { DropdownItemType } from "../../dataStructure";
 
 interface DropdownProps {
-  itemList: Item[];
+  itemList: DropdownItemType[];
   direction: string;
+  tabIndex: number;
 }
 
 const Dropdown = (dropdownProps: DropdownProps) => {
@@ -23,7 +24,11 @@ const Dropdown = (dropdownProps: DropdownProps) => {
   return (
     <div className="dropdown-container">
       <div className={iconWrapperClass}>
-        <div className="icon-container" onClick={toggleIsDropDownOpen}>
+        <div
+          className="icon-container"
+          onClick={toggleIsDropDownOpen}
+          tabIndex={dropdownProps.tabIndex}
+        >
           <div className="icon">
             <MoreIcon />
           </div>

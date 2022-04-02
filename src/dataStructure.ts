@@ -1,15 +1,20 @@
-import { MouseEventHandler } from "react";
+import { KeyboardEvent, MouseEvent } from "react";
 
-export type ButtonItem = {
+export interface ButtonItem extends Item {
   type: "button";
-  text: string;
-  clickHandler: MouseEventHandler<HTMLElement>;
-};
+  clickHandler: (e: KeyboardEvent | MouseEvent) => void;
+  onKeyUp?: (e: KeyboardEvent) => void;
+}
 
-export type AnchorItem = {
+export interface AnchorItem extends Item {
   type: "anchor";
-  text: string;
   href: string;
-};
+  target: string;
+}
 
-export type Item = AnchorItem | ButtonItem;
+export type DropdownItemType = AnchorItem | ButtonItem;
+
+interface Item {
+  id: number;
+  text: string;
+}
